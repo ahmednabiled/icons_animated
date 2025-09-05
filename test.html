@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>People List</title>
+  <style>
+    body {
+      background: #000;       /* black background */
+      color: #fff;            /* white text */
+      font-family: Arial, sans-serif;
+      margin: 0;
+      height: 100vh;          /* full viewport height */
+
+      display: flex;
+      justify-content: center; /* center horizontally */
+      align-items: center;     /* center vertically */
+    }
+
+    .people {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;            /* space between people */
+
+      max-height: 70vh;       /* set height limit */
+      overflow-y: auto;       /* enable vertical scrolling */
+      padding-right: 10px;    /* room for scrollbar */
+    }
+
+    .person {
+      display: flex;
+      align-items: center;
+      gap: 1rem;              /* space between image and text */
+    }
+
+    .person img {
+      width: 64px;            /* scale from 128px */
+      height: 64px;
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .name {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .handle {
+      font-size: 1rem;
+      color: #aaa;            /* softer gray */
+    }
+
+    /* optional: style scrollbar (webkit browsers) */
+    .people::-webkit-scrollbar {
+      width: 8px;
+    }
+    .people::-webkit-scrollbar-thumb {
+      background: #444;
+      border-radius: 4px;
+    }
+    .people::-webkit-scrollbar-track {
+      background: #111;
+    }
+  </style>
+</head>
+<body>
+  <div class="people">
+    <div class="person">
+      <img src="base.apng" alt="Avatar">
+      <div class="info">
+        <div class="name">Ahmed Nabil</div>
+        <div class="handle">@ahmednabiled</div>
+      </div>
+    </div>
+
+    <div class="person">
+      <img src="waving.apng" alt="Avatar">
+      <div class="info">
+        <div class="name">Jane Doe</div>
+        <div class="handle">@janedoe</div>
+      </div>
+    </div>
+
+    <div class="person">
+      <img src="crown.apng" alt="Avatar">
+      <div class="info">
+        <div class="name">John Smith</div>
+        <div class="handle">@johnsmith</div>
+      </div>
+    </div>
+
+    <div class="person">
+      <img src="evil.apng" alt="Avatar">
+      <div class="info">
+        <div class="name">John Smith</div>
+        <div class="handle">@johnsmith</div>
+      </div>
+    </div>
+
+    <div class="person">
+      <img src="muscles.apng" alt="Avatar">
+      <div class="info">
+        <div class="name">John Smith</div>
+        <div class="handle">@johnsmith</div>
+      </div>
+    </div>
+
+    <div class="person">
+      <img src="sunglasses.apng" alt="Avatar">
+      <div class="info">
+        <div class="name">John Smith</div>
+        <div class="handle">@johnsmith</div>
+      </div>
+    </div>
+
+    <div class="person">
+      <img src="headphones.apng" alt="Avatar">
+      <div class="info">
+        <div class="name">John Smith</div>
+        <div class="handle">@johnsmith</div>
+      </div>
+    </div>
+    
+
+    <div class="person">
+      <img src="rose.apng" alt="Avatar">
+      <div class="info">
+        <div class="name">John Smith</div>
+        <div class="handle">@johnsmith</div>
+      </div>
+    </div>
+
+    <div class="person">
+      <img src="sward.apng" alt="Avatar">
+      <div class="info">
+        <div class="name">John Smith</div>
+        <div class="handle">@johnsmith</div>
+      </div>
+    </div>
+
+    <div class="person">
+      <img src="gril.apng" alt="Avatar">
+      <div class="info">
+        <div class="name">John Smith</div>
+        <div class="handle">@johnsmith</div>
+      </div>
+    </div>
+    <!-- Add more .person blocks here to test scrolling -->
+  </div>
+</body>
+</html>
