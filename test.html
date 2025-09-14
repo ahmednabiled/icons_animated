@@ -5,35 +5,35 @@
   <title>People List</title>
   <style>
     body {
-      background: #000;       /* black background */
-      color: #fff;            /* white text */
+      background: #000000;       /* black background */
+      color: #fff;               /* white text */
       font-family: Arial, sans-serif;
       margin: 0;
-      height: 100vh;          /* full viewport height */
+      height: 100vh;             /* full viewport height */
 
       display: flex;
-      justify-content: center; /* center horizontally */
-      align-items: center;     /* center vertically */
+      justify-content: center;   /* center horizontally */
+      align-items: center;       /* center vertically */
     }
 
     .people {
       display: flex;
-      flex-direction: column;
-      gap: 1.5rem;            /* space between people */
+      flex-direction: column;    /* one direction: vertical */
+      gap: 1.5rem;               /* space between people */
 
-      max-height: 70vh;       /* set height limit */
-      overflow-y: auto;       /* enable vertical scrolling */
-      padding-right: 10px;    /* room for scrollbar */
+      max-height: 70vh;          /* set height limit */
+      overflow-y: auto;          /* enable vertical scrolling */
+      padding-right: 10px;       /* room for scrollbar */
     }
 
     .person {
       display: flex;
       align-items: center;
-      gap: 1rem;              /* space between image and text */
+      gap: 1rem;                 /* space between image and text */
     }
 
     .person img {
-      width: 64px;            /* scale from 128px */
+      width: 64px;               /* scale from 128px */
       height: 64px;
     }
 
@@ -49,7 +49,7 @@
 
     .handle {
       font-size: 1rem;
-      color: #aaa;            /* softer gray */
+      color: #aaa;               /* softer gray */
     }
 
     /* optional: style scrollbar (webkit browsers) */
@@ -122,7 +122,6 @@
         <div class="handle">@johnsmith</div>
       </div>
     </div>
-    
 
     <div class="person">
       <img src="rose.apng" alt="Avatar">
@@ -180,21 +179,63 @@
       </div>
     </div>
 
-
     <div class="person">
       <img src="soldier.apng" alt="Avatar">
       <div class="info">
         <div class="name">15</div>
         <div class="handle">@johnsmith</div>
       </div>
-      
-      <div class="person">
+    </div>
+
+    <div class="person">
       <img src="police.apng" alt="Avatar">
       <div class="info">
-        <div class="name">15</div>
+        <div class="name">16</div>
         <div class="handle">@johnsmith</div>
       </div>
     </div>
+
+    <div class="person">
+      <img src="batman.apng" alt="Avatar">
+      <div class="info">
+        <div class="name">17</div>
+        <div class="handle">@johnsmith</div>
+      </div>
+    </div>
+
+    <div class="person">
+      <img src="farmer.apng" alt="Avatar">
+      <div class="info">
+        <div class="name">18</div>
+        <div class="handle">@johnsmith</div>
+      </div>
+    </div>
+
+    <div class="person">
+      <img src="joker.apng" alt="Avatar">
+      <div class="info">
+        <div class="name">19</div>
+        <div class="handle">@johnsmith</div>
+      </div>
+    </div>    
+
+
+        <div class="person">
+      <img src="ironman.apng" alt="Avatar">
+      <div class="info">
+        <div class="name">20</div>
+        <div class="handle">@johnsmith</div>
+      </div>
+    </div>  
+
+        <div class="person">
+      <img src="alien.apng" alt="Avatar">
+      <div class="info">
+        <div class="name">21</div>
+        <div class="handle">@johnsmith</div>
+      </div>
+    </div>  
+
     <!-- Add more .person blocks here to test scrolling -->
   </div>
 </body>
