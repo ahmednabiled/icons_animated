@@ -2,408 +2,505 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>People List</title>
+  <title>People Directory</title>
   <style>
     body {
-      background: #000000;       /* black background */
-      color: #fff;               /* white text */
+      background: #000;
+      color: #fff;
       font-family: Arial, sans-serif;
       margin: 0;
-      height: 100vh;             /* full viewport height */
-
+      height: 100vh;
       display: flex;
-      justify-content: center;   /* center horizontally */
-      align-items: center;       /* center vertically */
+      justify-content: center;
+      align-items: center;
     }
 
-    .people {
+    .directory {
       display: flex;
-      flex-direction: column;    /* one direction: vertical */
-      gap: 1.5rem;               /* space between people */
-
-      max-height: 70vh;          /* set height limit */
-      overflow-y: auto;          /* enable vertical scrolling */
-      padding-right: 10px;       /* room for scrollbar */
+      flex-direction: column;
+      gap: 1.5rem;
+      max-height: 70vh;
+      overflow-y: auto;
+      padding-right: 10px;
+      counter-reset: person-counter;
     }
 
-    .person {
+    .directory-item {
       display: flex;
       align-items: center;
-      gap: 1rem;                 /* space between image and text */
+      gap: 1rem;
+      counter-increment: person-counter;
     }
 
-    .person img {
-      width: 64px;               /* scale from 128px */
+    .directory-item img {
+      width: 64px;
       height: 64px;
     }
 
-    .info {
+    .directory-info {
       display: flex;
       flex-direction: column;
     }
 
-    .name {
+    .directory-rank::before {
+      content: counter(person-counter) ". ";
+      font-weight: bold;
+      margin-right: 0.25rem;
+    }
+
+    .directory-rank {
       font-size: 1.5rem;
       font-weight: bold;
     }
 
-    .handle {
+    .directory-handle {
       font-size: 1rem;
-      color: #aaa;               /* softer gray */
+      color: #aaa;
     }
 
-    /* optional: style scrollbar (webkit browsers) */
-    .people::-webkit-scrollbar {
+    .directory::-webkit-scrollbar {
       width: 8px;
     }
-    .people::-webkit-scrollbar-thumb {
+    .directory::-webkit-scrollbar-thumb {
       background: #444;
       border-radius: 4px;
     }
-    .people::-webkit-scrollbar-track {
+    .directory::-webkit-scrollbar-track {
       background: #111;
     }
   </style>
 </head>
 <body>
-  <div class="people">
-    <div class="person">
-      <img src="base.apng" alt="Avatar">
-      <div class="info">
-        <div class="name">1</div>
-        <div class="handle">@ahmednabiled</div>
+  <div class="directory">
+    <div class="directory-item">
+      <img src="base.apng" alt="Ahmed Nabil avatar">
+      <div class="directory-info">
+        <div class="directory-rank">Ahmed Nabil</div>
+        <div class="directory-handle">@ahmednabiled</div>
       </div>
     </div>
 
-    <div class="person">
-      <img src="waving.apng" alt="Avatar">
-      <div class="info">
-        <div class="name">2</div>
-        <div class="handle">@janedoe</div>
+    <div class="directory-item">
+      <img src="waving.apng" alt="Jane Doe waving">
+      <div class="directory-info">
+        <div class="directory-rank">Jane Doe</div>
+        <div class="directory-handle">@janedoe</div>
       </div>
     </div>
 
-    <div class="person">
-      <img src="crown.apng" alt="Avatar">
-      <div class="info">
-        <div class="name">3</div>
-        <div class="handle">@johnsmith</div>
+    <div class="directory-item">
+      <img src="crown.apng" alt="John Smith with crown">
+      <div class="directory-info">
+        <div class="directory-rank">John Smith</div>
+        <div class="directory-handle">@johnsmith</div>
       </div>
     </div>
 
-    <div class="person">
-      <img src="evil.apng" alt="Avatar">
-      <div class="info">
-        <div class="name">4</div>
-        <div class="handle">@johnsmith</div>
+    <div class="directory-item">
+      <img src="evil.apng" alt="John Smith evil avatar">
+      <div class="directory-info">
+        <div class="directory-rank">John Smith</div>
+        <div class="directory-handle">@johnsmith</div>
       </div>
     </div>
 
-    <div class="person">
-      <img src="muscles.apng" alt="Avatar">
-      <div class="info">
-        <div class="name">5</div>
-        <div class="handle">@johnsmith</div>
+    <div class="directory-item">
+      <img src="muscles.apng" alt="John Smith flexing muscles">
+      <div class="directory-info">
+        <div class="directory-rank">John Smith</div>
+        <div class="directory-handle">@johnsmith</div>
       </div>
     </div>
 
-    <div class="person">
-      <img src="sunglasses.apng" alt="Avatar">
-      <div class="info">
-        <div class="name">6</div>
-        <div class="handle">@johnsmith</div>
+    <div class="directory-item">
+      <img src="sunglasses.apng" alt="John Smith with sunglasses">
+      <div class="directory-info">
+        <div class="directory-rank">John Smith</div>
+        <div class="directory-handle">@johnsmith</div>
       </div>
     </div>
 
-    <div class="person">
-      <img src="headphones.apng" alt="Avatar">
-      <div class="info">
-        <div class="name">7</div>
-        <div class="handle">@johnsmith</div>
+    <div class="directory-item">
+      <img src="headphones.apng" alt="John Smith with headphones">
+      <div class="directory-info">
+        <div class="directory-rank">John Smith</div>
+        <div class="directory-handle">@johnsmith</div>
       </div>
     </div>
 
-    <div class="person">
-      <img src="rose.apng" alt="Avatar">
-      <div class="info">
-        <div class="name">8</div>
-        <div class="handle">@johnsmith</div>
+    <div class="directory-item">
+      <img src="rose.apng" alt="John Smith rose avatar">
+      <div class="directory-info">
+        <div class="directory-rank">John Smith</div>
+        <div class="directory-handle">@johnsmith</div>
       </div>
     </div>
 
-    <div class="person">
-      <img src="sward.apng" alt="Avatar">
-      <div class="info">
-        <div class="name">9</div>
-        <div class="handle">@johnsmith</div>
+    <div class="directory-item">
+      <img src="sward.apng" alt="John Smith sword avatar">
+      <div class="directory-info">
+        <div class="directory-rank">John Smith</div>
+        <div class="directory-handle">@johnsmith</div>
       </div>
     </div>
 
-    <div class="person">
-      <img src="gril.apng" alt="Avatar">
-      <div class="info">
-        <div class="name">10</div>
-        <div class="handle">@johnsmith</div>
+    <div class="directory-item">
+      <img src="gril.apng" alt="John Smith girl avatar">
+      <div class="directory-info">
+        <div class="directory-rank">John Smith</div>
+        <div class="directory-handle">@johnsmith</div>
       </div>
     </div>
 
-    <div class="person">
-      <img src="cool_star.apng" alt="Avatar">
-      <div class="info">
-        <div class="name">11</div>
-        <div class="handle">@johnsmith</div>
+    <div class="directory-item">
+      <img src="cool_star.apng" alt="John Smith with star">
+      <div class="directory-info">
+        <div class="directory-rank">John Smith</div>
+        <div class="directory-handle">@johnsmith</div>
       </div>
     </div>
 
-    <div class="person">
-      <img src="hulk.apng" alt="Avatar">
-      <div class="info">
-        <div class="name">12</div>
-        <div class="handle">@johnsmith</div>
+    <div class="directory-item">
+      <img src="hulk.apng" alt="John Smith hulk avatar">
+      <div class="directory-info">
+        <div class="directory-rank">John Smith</div>
+        <div class="directory-handle">@johnsmith</div>
       </div>
     </div>
 
-    <div class="person">
-      <img src="birthday.apng" alt="Avatar">
-      <div class="info">
-        <div class="name">13</div>
-        <div class="handle">@johnsmith</div>
+    <div class="directory-item">
+      <img src="birthday.apng" alt="John Smith birthday avatar">
+      <div class="directory-info">
+        <div class="directory-rank">John Smith</div>
+        <div class="directory-handle">@johnsmith</div>
       </div>
     </div>
 
-    <div class="person">
-      <img src="superman.apng" alt="Avatar">
-      <div class="info">
-        <div class="name">14</div>
-        <div class="handle">@johnsmith</div>
+    <div class="directory-item">
+      <img src="superman.apng" alt="John Smith superman avatar">
+      <div class="directory-info">
+        <div class="directory-rank">John Smith</div>
+        <div class="directory-handle">@johnsmith</div>
       </div>
     </div>
 
-    <div class="person">
-      <img src="soldier.apng" alt="Avatar">
-      <div class="info">
-        <div class="name">15</div>
-        <div class="handle">@johnsmith</div>
+    <div class="directory-item">
+      <img src="soldier.apng" alt="John Smith soldier avatar">
+      <div class="directory-info">
+        <div class="directory-rank">John Smith</div>
+        <div class="directory-handle">@johnsmith</div>
       </div>
     </div>
 
-    <div class="person">
-      <img src="police.apng" alt="Avatar">
-      <div class="info">
-        <div class="name">16</div>
-        <div class="handle">@johnsmith</div>
+    <div class="directory-item">
+      <img src="police.apng" alt="John Smith police avatar">
+      <div class="directory-info">
+        <div class="directory-rank">John Smith</div>
+        <div class="directory-handle">@johnsmith</div>
       </div>
     </div>
 
-    <div class="person">
-      <img src="batman.apng" alt="Avatar">
-      <div class="info">
-        <div class="name">17</div>
-        <div class="handle">@johnsmith</div>
+    <div class="directory-item">
+      <img src="batman.apng" alt="John Smith batman avatar">
+      <div class="directory-info">
+        <div class="directory-rank">John Smith</div>
+        <div class="directory-handle">@johnsmith</div>
       </div>
     </div>
 
-    <div class="person">
-      <img src="farmer.apng" alt="Avatar">
-      <div class="info">
-        <div class="name">18</div>
-        <div class="handle">@johnsmith</div>
+    <div class="directory-item">
+      <img src="farmer.apng" alt="John Smith farmer avatar">
+      <div class="directory-info">
+        <div class="directory-rank">John Smith</div>
+        <div class="directory-handle">@johnsmith</div>
       </div>
     </div>
 
-    <div class="person">
-      <img src="joker.apng" alt="Avatar">
-      <div class="info">
-        <div class="name">19</div>
-        <div class="handle">@johnsmith</div>
-      </div>
-    </div>    
-
-
-        <div class="person">
-      <img src="ironman.apng" alt="Avatar">
-      <div class="info">
-        <div class="name">20</div>
-        <div class="handle">@johnsmith</div>
-      </div>
-    </div>  
-
-        <div class="person">
-      <img src="alien.apng" alt="Avatar">
-      <div class="info">
-        <div class="name">21</div>
-        <div class="handle">@johnsmith</div>
-      </div>
-    </div>  
-
-     <!-- Newly added -->
-    <div class="person">
-      <img src="algeria.apng" alt="Avatar">
-      <div class="info">
-        <div class="name">22</div>
-        <div class="handle">@algeria</div>
+    <div class="directory-item">
+      <img src="joker.apng" alt="John Smith joker avatar">
+      <div class="directory-info">
+        <div class="directory-rank">John Smith</div>
+        <div class="directory-handle">@johnsmith</div>
       </div>
     </div>
 
-    <div class="person">
-      <img src="egypt.apng" alt="Avatar">
-      <div class="info">
-        <div class="name">23</div>
-        <div class="handle">@egypt</div>
+    <div class="directory-item">
+      <img src="ironman.apng" alt="John Smith ironman avatar">
+      <div class="directory-info">
+        <div class="directory-rank">John Smith</div>
+        <div class="directory-handle">@johnsmith</div>
       </div>
     </div>
 
-    <div class="person">
-      <img src="jiboti.apng" alt="Avatar">
-      <div class="info">
-        <div class="name">24</div>
-        <div class="handle">@jiboti</div>
+    <div class="directory-item">
+      <img src="alien.apng" alt="John Smith alien avatar">
+      <div class="directory-info">
+        <div class="directory-rank">John Smith</div>
+        <div class="directory-handle">@johnsmith</div>
       </div>
     </div>
 
-    <div class="person">
-      <img src="libya.apng" alt="Avatar">
-      <div class="info">
-        <div class="name">25</div>
-        <div class="handle">@libya</div>
+    <div class="directory-item">
+      <img src="algeria.apng" alt="Algeria flag">
+      <div class="directory-info">
+        <div class="directory-rank">Algeria</div>
+        <div class="directory-handle">@algeria</div>
       </div>
     </div>
 
-    <div class="person">
-      <img src="moritania.apng" alt="Avatar">
-      <div class="info">
-        <div class="name">26</div>
-        <div class="handle">@moritania</div>
+    <div class="directory-item">
+      <img src="egypt.apng" alt="Egypt flag">
+      <div class="directory-info">
+        <div class="directory-rank">Egypt</div>
+        <div class="directory-handle">@egypt</div>
       </div>
     </div>
 
-    <div class="person">
-      <img src="morocoo.apng" alt="Avatar">
-      <div class="info">
-        <div class="name">27</div>
-        <div class="handle">@morocco</div>
+    <div class="directory-item">
+      <img src="jiboti.apng" alt="Djibouti flag">
+      <div class="directory-info">
+        <div class="directory-rank">Djibouti</div>
+        <div class="directory-handle">@jiboti</div>
       </div>
     </div>
 
-    <div class="person">
-      <img src="somalia.apng" alt="Avatar">
-      <div class="info">
-        <div class="name">28</div>
-        <div class="handle">@somalia</div>
+    <div class="directory-item">
+      <img src="libya.apng" alt="Libya flag">
+      <div class="directory-info">
+        <div class="directory-rank">Libya</div>
+        <div class="directory-handle">@libya</div>
       </div>
     </div>
 
-    <div class="person">
-      <img src="sudan.apng" alt="Avatar">
-      <div class="info">
-        <div class="name">29</div>
-        <div class="handle">@sudan</div>
+    <div class="directory-item">
+      <img src="moritania.apng" alt="Mauritania flag">
+      <div class="directory-info">
+        <div class="directory-rank">Mauritania</div>
+        <div class="directory-handle">@moritania</div>
       </div>
     </div>
 
-    <div class="person">
-      <img src="tunis.apng" alt="Avatar">
-      <div class="info">
-        <div class="name">30</div>
-        <div class="handle">@tunisia</div>
+    <div class="directory-item">
+      <img src="morocoo.apng" alt="Morocco flag">
+      <div class="directory-info">
+        <div class="directory-rank">Morocco</div>
+        <div class="directory-handle">@morocco</div>
       </div>
     </div>
 
-        <div class="person">
-      <img src="Bahrain.apng" alt="Avatar">
-      <div class="info">
-        <div class="name">31</div>
-        <div class="handle">@bahrain</div>
+    <div class="directory-item">
+      <img src="somalia.apng" alt="Somalia flag">
+      <div class="directory-info">
+        <div class="directory-rank">Somalia</div>
+        <div class="directory-handle">@somalia</div>
       </div>
     </div>
 
-    <div class="person">
-      <img src="Comoros.apng" alt="Avatar">
-      <div class="info">
-        <div class="name">32</div>
-        <div class="handle">@comoros</div>
+    <div class="directory-item">
+      <img src="sudan.apng" alt="Sudan flag">
+      <div class="directory-info">
+        <div class="directory-rank">Sudan</div>
+        <div class="directory-handle">@sudan</div>
       </div>
     </div>
 
-    <div class="person">
-      <img src="Jordan.apng" alt="Avatar">
-      <div class="info">
-        <div class="name">33</div>
-        <div class="handle">@jordan</div>
+    <div class="directory-item">
+      <img src="tunis.apng" alt="Tunisia flag">
+      <div class="directory-info">
+        <div class="directory-rank">Tunisia</div>
+        <div class="directory-handle">@tunisia</div>
       </div>
     </div>
 
-    <div class="person">
-      <img src="Kuwait.apng" alt="Avatar">
-      <div class="info">
-        <div class="name">34</div>
-        <div class="handle">@kuwait</div>
+    <div class="directory-item">
+      <img src="Bahrain.apng" alt="Bahrain flag">
+      <div class="directory-info">
+        <div class="directory-rank">Bahrain</div>
+        <div class="directory-handle">@bahrain</div>
       </div>
     </div>
 
-    <div class="person">
-      <img src="Lebanon.apng" alt="Avatar">
-      <div class="info">
-        <div class="name">35</div>
-        <div class="handle">@lebanon</div>
+    <div class="directory-item">
+      <img src="Comoros.apng" alt="Comoros flag">
+      <div class="directory-info">
+        <div class="directory-rank">Comoros</div>
+        <div class="directory-handle">@comoros</div>
       </div>
     </div>
 
-    <div class="person">
-      <img src="Oman.apng" alt="Avatar">
-      <div class="info">
-        <div class="name">36</div>
-        <div class="handle">@oman</div>
+    <div class="directory-item">
+      <img src="Jordan.apng" alt="Jordan flag">
+      <div class="directory-info">
+        <div class="directory-rank">Jordan</div>
+        <div class="directory-handle">@jordan</div>
       </div>
     </div>
 
-    <div class="person">
-      <img src="Palestine.apng" alt="Avatar">
-      <div class="info">
-        <div class="name">37</div>
-        <div class="handle">@palestine</div>
+    <div class="directory-item">
+      <img src="Kuwait.apng" alt="Kuwait flag">
+      <div class="directory-info">
+        <div class="directory-rank">Kuwait</div>
+        <div class="directory-handle">@kuwait</div>
       </div>
     </div>
 
-    <div class="person">
-      <img src="Qatar.apng" alt="Avatar">
-      <div class="info">
-        <div class="name">38</div>
-        <div class="handle">@qatar</div>
+    <div class="directory-item">
+      <img src="Lebanon.apng" alt="Lebanon flag">
+      <div class="directory-info">
+        <div class="directory-rank">Lebanon</div>
+        <div class="directory-handle">@lebanon</div>
       </div>
     </div>
 
-    <div class="person">
-      <img src="Saudi.apng" alt="Avatar">
-      <div class="info">
-        <div class="name">39</div>
-        <div class="handle">@saudi</div>
+    <div class="directory-item">
+      <img src="Oman.apng" alt="Oman flag">
+      <div class="directory-info">
+        <div class="directory-rank">Oman</div>
+        <div class="directory-handle">@oman</div>
       </div>
     </div>
 
-    <div class="person">
-      <img src="Syria.apng" alt="Avatar">
-      <div class="info">
-        <div class="name">40</div>
-        <div class="handle">@syria</div>
+    <div class="directory-item">
+      <img src="Palestine.apng" alt="Palestine flag">
+      <div class="directory-info">
+        <div class="directory-rank">Palestine</div>
+        <div class="directory-handle">@palestine</div>
       </div>
     </div>
 
-    <div class="person">
-      <img src="Yemen.apng" alt="Avatar">
-      <div class="info">
-        <div class="name">41</div>
-        <div class="handle">@yemen</div>
+    <div class="directory-item">
+      <img src="Qatar.apng" alt="Qatar flag">
+      <div class="directory-info">
+        <div class="directory-rank">Qatar</div>
+        <div class="directory-handle">@qatar</div>
       </div>
     </div>
 
-    <div class="person">
-      <img src="uae.apng" alt="Avatar">
-      <div class="info">
-        <div class="name">42</div>
-        <div class="handle">@uae</div>
+    <div class="directory-item">
+      <img src="Saudi.apng" alt="Saudi Arabia flag">
+      <div class="directory-info">
+        <div class="directory-rank">Saudi Arabia</div>
+        <div class="directory-handle">@saudi</div>
       </div>
     </div>
+
+    <div class="directory-item">
+      <img src="Syria.apng" alt="Syria flag">
+      <div class="directory-info">
+        <div class="directory-rank">Syria</div>
+        <div class="directory-handle">@syria</div>
+      </div>
+    </div>
+
+    <div class="directory-item">
+      <img src="Yemen.apng" alt="Yemen flag">
+      <div class="directory-info">
+        <div class="directory-rank">Yemen</div>
+        <div class="directory-handle">@yemen</div>
+      </div>
+    </div>
+
+    <div class="directory-item">
+      <img src="uae.apng" alt="United Arab Emirates flag">
+      <div class="directory-info">
+        <div class="directory-rank">UAE</div>
+        <div class="directory-handle">@uae</div>
+      </div>
+    </div>
+
+    <!-- Labubu series -->
+    <div class="directory-item">
+      <img src="labubu1.apng" alt="Labubu character 1">
+      <div class="directory-info">
+        <div class="directory-rank">Labubu 1</div>
+        <div class="directory-handle">@labubu</div>
+      </div>
+    </div>
+
+    <div class="directory-item">
+      <img src="labubu2.apng" alt="Labubu character 2">
+      <div class="directory-info">
+        <div class="directory-rank">Labubu 2</div>
+        <div class="directory-handle">@labubu</div>
+      </div>
+    </div>
+
+    <div class="directory-item">
+      <img src="labubu3.apng" alt="Labubu character 3">
+      <div class="directory-info">
+        <div class="directory-rank">Labubu 3</div>
+        <div class="directory-handle">@labubu</div>
+      </div>
+    </div>
+
+    <div class="directory-item">
+      <img src="labubu4.apng" alt="Labubu character 4">
+      <div class="directory-info">
+        <div class="directory-rank">Labubu 4</div>
+        <div class="directory-handle">@labubu</div>
+      </div>
+    </div>
+
+    <div class="directory-item">
+      <img src="labubu5.apng" alt="Labubu character 5">
+      <div class="directory-info">
+        <div class="directory-rank">Labubu 5</div>
+        <div class="directory-handle">@labubu</div>
+      </div>
+    </div>
+
+    <div class="directory-item">
+      <img src="labubu6.apng" alt="Labubu character 6">
+      <div class="directory-info">
+        <div class="directory-rank">Labubu 6</div>
+        <div class="directory-handle">@labubu</div>
+      </div>
+    </div>
+
+    <div class="directory-item">
+      <img src="labubu7.apng" alt="Labubu character 7">
+      <div class="directory-info">
+        <div class="directory-rank">Labubu 7</div>
+        <div class="directory-handle">@labubu</div>
+      </div>
+    </div>
+
+    <div class="directory-item">
+      <img src="labubu8.apng" alt="Labubu character 8">
+      <div class="directory-info">
+        <div class="directory-rank">Labubu 8</div>
+        <div class="directory-handle">@labubu</div>
+      </div>
+    </div>
+
+    <div class="directory-item">
+      <img src="labubu9.apng" alt="Labubu character 9">
+      <div class="directory-info">
+        <div class="directory-rank">Labubu 9</div>
+        <div class="directory-handle">@labubu</div>
+      </div>
+    </div>
+    </div>
+
+    <div class="directory-item">
+      <img src="labubu10.apng" alt="Labubu character 10">
+      <div class="directory-info">
+        <div class="directory-rank">Labubu 10</div>
+        <div class="directory-handle">@labubu</div>
+      </div>
+    </div>
+    </div>
+
+    <div class="directory-item">
+      <img src="labubu11.apng" alt="Labubu character 11">
+      <div class="directory-info">
+        <div class="directory-rank">Labubu 11</div>
+        <div class="directory-handle">@labubu</div>
+      </div>
+    </div>
+    </div>
+
+
 
     <!-- Add more .person blocks here to test scrolling -->
   </div>
