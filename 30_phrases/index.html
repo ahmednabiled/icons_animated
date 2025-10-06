@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>30 Animated Phrases</title>
+  <style>
+    /* Modern black background with subtle gradient */
+    html, body {
+      background: linear-gradient(135deg, #000 0%, #111 100%);
+      background-color: #000;
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      width: 100%;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: 300;
+      text-shadow: 0 0 10px rgba(255,255,255,0.3);
+    }
+
+    /* Search bar */
+    .search-container {
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    #search {
+      padding: 10px;
+      width: 300px;
+      border: none;
+      border-radius: 25px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      font-size: 1rem;
+      outline: none;
+      transition: background 0.3s;
+    }
+
+    #search::placeholder {
+      color: #ccc;
+    }
+
+    #search:focus {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Grid layout for phrases */
+    .phrases {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      width: 90%;
+      max-width: 1200px;
+      box-sizing: border-box;
+    }
+
+    .phrase {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      padding: 15px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    .phrase:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    .phrase img {
+      width: 128px;
+      height: 64px;
+      object-fit: contain;
+      background: transparent;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    .phrase .name {
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .phrases {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        padding: 10px;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      #search {
+        width: 250px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>30 Animated Phrases</h1>
+  </header>
+
+  <div class="phrases">
+    <!-- Entries 1 through 30 -->
+    <div class="phrase" data-name="1"><img src="1.apng" alt="Phrase 1"><div class="name">Phrase 1</div></div>
+    <div class="phrase" data-name="2"><img src="2.apng" alt="Phrase 2"><div class="name">Phrase 2</div></div>
+    <div class="phrase" data-name="3"><img src="3.apng" alt="Phrase 3"><div class="name">Phrase 3</div></div>
+    <div class="phrase" data-name="4"><img src="4.apng" alt="Phrase 4"><div class="name">Phrase 4</div></div>
+    <div class="phrase" data-name="5"><img src="5.apng" alt="Phrase 5"><div class="name">Phrase 5</div></div>
+    <div class="phrase" data-name="6"><img src="6.apng" alt="Phrase 6"><div class="name">Phrase 6</div></div>
+    <div class="phrase" data-name="7"><img src="7.apng" alt="Phrase 7"><div class="name">Phrase 7</div></div>
+    <div class="phrase" data-name="8"><img src="8.apng" alt="Phrase 8"><div class="name">Phrase 8</div></div>
+    <div class="phrase" data-name="9"><img src="9.apng" alt="Phrase 9"><div class="name">Phrase 9</div></div>
+    <div class="phrase" data-name="10"><img src="10.apng" alt="Phrase 10"><div class="name">Phrase 10</div></div>
+    <div class="phrase" data-name="11"><img src="11.apng" alt="Phrase 11"><div class="name">Phrase 11</div></div>
+    <div class="phrase" data-name="12"><img src="12.apng" alt="Phrase 12"><div class="name">Phrase 12</div></div>
+    <div class="phrase" data-name="13"><img src="13.apng" alt="Phrase 13"><div class="name">Phrase 13</div></div>
+    <div class="phrase" data-name="14"><img src="14.apng" alt="Phrase 14"><div class="name">Phrase 14</div></div>
+    <div class="phrase" data-name="15"><img src="15.apng" alt="Phrase 15"><div class="name">Phrase 15</div></div>
+    <div class="phrase" data-name="16"><img src="16.apng" alt="Phrase 16"><div class="name">Phrase 16</div></div>
+    <div class="phrase" data-name="17"><img src="17.apng" alt="Phrase 17"><div class="name">Phrase 17</div></div>
+    <div class="phrase" data-name="18"><img src="18.apng" alt="Phrase 18"><div class="name">Phrase 18</div></div>
+    <div class="phrase" data-name="19"><img src="19.apng" alt="Phrase 19"><div class="name">Phrase 19</div></div>
+    <div class="phrase" data-name="20"><img src="20.apng" alt="Phrase 20"><div class="name">Phrase 20</div></div>
+    <div class="phrase" data-name="21"><img src="21.apng" alt="Phrase 21"><div class="name">Phrase 21</div></div>
+    <div class="phrase" data-name="22"><img src="22.apng" alt="Phrase 22"><div class="name">Phrase 22</div></div>
+    <div class="phrase" data-name="23"><img src="23.apng" alt="Phrase 23"><div class="name">Phrase 23</div></div>
+    <div class="phrase" data-name="24"><img src="24.apng" alt="Phrase 24"><div class="name">Phrase 24</div></div>
+    <div class="phrase" data-name="25"><img src="25.apng" alt="Phrase 25"><div class="name">Phrase 25</div></div>
+    <div class="phrase" data-name="26"><img src="26.apng" alt="Phrase 26"><div class="name">Phrase 26</div></div>
+    <div class="phrase" data-name="27"><img src="27.apng" alt="Phrase 27"><div class="name">Phrase 27</div></div>
+    <div class="phrase" data-name="28"><img src="28.apng" alt="Phrase 28"><div class="name">Phrase 28</div></div>
+    <div class="phrase" data-name="29"><img src="29.apng" alt="Phrase 29"><div class="name">Phrase 29</div></div>
+    <div class="phrase" data-name="30"><img src="30.apng" alt="Phrase 30"><div class="name">Phrase 30</div></div>
+  </div>
+
+  <!-- <script>
+    // Simple search functionality
+    const searchInput = document.getElementById('search');
+    const phrases = document.querySelectorAll('.phrase');
+
+    searchInput.addEventListener('input', function() {
+      const query = this.value.toLowerCase();
+      phrases.forEach(phrase => {
+        const name = phrase.getAttribute('data-name').toLowerCase();
+        if (name.includes(query)) {
+          phrase.style.display = 'flex';
+        } else {
+          phrase.style.display = 'none';
+        }
+      });
+    });
+  </script> -->
+</body>
+</html>
